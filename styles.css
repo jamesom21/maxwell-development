@@ -7,6 +7,8 @@
   --line: rgba(18, 20, 22, 0.14);
   --steel: #7b8f98;
   --copper: #b77b49;
+  --logo-gold: #d7aa46;
+  --logo-blue: #9aabba;
   --sage: #67776a;
   --white: #ffffff;
   --shadow: 0 24px 60px rgba(18, 20, 22, 0.2);
@@ -79,24 +81,53 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
   min-width: 0;
   text-decoration: none;
-  font-weight: 760;
 }
 
 .brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid currentColor;
-  font-size: 0.78rem;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--logo-gold);
+  color: var(--logo-gold);
+  font-size: 1.45rem;
+  font-weight: 500;
 }
 
-.brand-text {
-  font-size: 0.94rem;
+.brand-wordmark {
+  display: grid;
+  gap: 1px;
+  line-height: 1.05;
   white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.brand-name,
+.brand-descriptor {
+  display: block;
+}
+
+.brand-name {
+  color: var(--white);
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.brand-descriptor {
+  color: var(--logo-blue);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.site-header.is-scrolled .brand-name,
+.site-header.nav-active .brand-name {
+  color: var(--ink);
 }
 
 .site-nav {
@@ -471,10 +502,22 @@ p {
     padding: 12px 18px;
   }
 
-  .brand-text {
-    max-width: 220px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 1.25rem;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+
+  .brand-descriptor {
+    font-size: 0.58rem;
   }
 
   .nav-toggle {
